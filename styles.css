@@ -1,0 +1,97 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Game container */
+.game-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: fit-content;
+}
+
+/* Header */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+#reset-btn {
+  background: #f0f0f3;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+  position: relative;
+}
+
+#reset-btn span {
+  position: relative;
+  top: -3.5px; /* поднимает смайлик */
+  display: inline-block;
+}
+
+#reset-btn:hover {
+  background: #e4e4e7;
+}
+
+/* Game board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 4px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  user-select: none;
+}
+
+.cell.closed {
+  background: #d1d5db;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.cell.open {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #2563eb;
+}
+.cell.flag {
+  background: #d6e8ff;
+  color: #b91c1c;
+}
+.cell.mine {
+  background: #fee2e2;
+  color: #fff;
+}
+.cell.exploded {
+  background: #fee2e2;
+  color: #fff;
+  font-size: 1.2rem;
+}
